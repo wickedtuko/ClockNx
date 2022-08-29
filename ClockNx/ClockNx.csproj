@@ -52,4 +52,14 @@
 	  <None Remove="Resources\Images\add_circle_fill0_wght400_grad0_opsz48.svg" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="ViewModel\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="TimerPage.xaml.cs">
+	    <DependentUpon>TimerPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
 </Project>
