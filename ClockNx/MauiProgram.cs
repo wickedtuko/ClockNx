@@ -1,4 +1,6 @@
-﻿namespace ClockNx;
+﻿using ClockNx.ViewModel;
+
+namespace ClockNx;
 
 public static class MauiProgram
 {
@@ -13,6 +15,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddSingleton<TimerPage>();
+		builder.Services.AddSingleton<TimerViewModel>();
 		return builder.Build();
 	}
 }

@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClockNx.TimerPage">
+             x:Class="ClockNx.TimerPage"
+             xmlns:viewmodel="clr-namespace:ClockNx.ViewModel"
+             x:DataType="viewmodel:TimerViewModel">
 
     <Grid RowDefinitions="Auto, *">
         <ImageButton 
             Source="add_circle_fill0_wght400_grad0_opsz48.png"
-            HeightRequest="48"/>
+            HeightRequest="48"
+            Command="{Binding AddCommand}"/>
     </Grid>
 </ContentPage>
