@@ -20,7 +20,12 @@ public partial class App : Application
             IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
             WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(windowHandle);
             AppWindow appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
-            appWindow.Resize(new SizeInt32(500, 500));
+            //appWindow.Resize(new SizeInt32(500, 500));
+            appWindow.Resize(new SizeInt32(492, 484));
+            var clientSize = appWindow.ClientSize;
+            var g = Globals.GetGlobals();
+            g.ActualClientSize = clientSize;
+            //appWindow.ResizeClient(new SizeInt32(550, 600));
 #endif
         });
 
