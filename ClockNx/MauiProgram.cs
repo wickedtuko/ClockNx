@@ -27,9 +27,6 @@ public static class MauiProgram
 				events.AddWindows(windows => windows
 						.OnClosed((window, args) =>
 						{
-							//IWindow appWindow = window.GetWindow();
-							var x = Application.Current;
-							var y = Microsoft.Maui.Devices.DeviceDisplay.MainDisplayInfo;
 							var g = Globals.GetGlobals();
 							var clientSize = g.ActualClientSize;
 							if (clientSize.Height != window.Bounds.Height || clientSize.Width != window.Bounds.Width)
