@@ -21,7 +21,12 @@ public partial class App : Application
             WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(windowHandle);
             AppWindow appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
             //appWindow.Resize(new SizeInt32(500, 500));
-            appWindow.Resize(new SizeInt32(492, 484));
+            var width = Preferences.Default.ContainsKey("Width") ? Preferences.Default.Get("Width", 500.0) : 500.0;
+            var height = Preferences.Default.ContainsKey("Height") ? Preferences.Default.Get("Height", 500.0) : 500.0;
+            var size = new SizeInt32();
+            size.Height = (Int32)height;
+            size.Width = (Int32)width;
+            appWindow.Resize(size);
             var clientSize = appWindow.ClientSize;
             var g = Globals.GetGlobals();
             g.ActualClientSize = clientSize;

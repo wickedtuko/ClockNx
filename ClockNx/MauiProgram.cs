@@ -34,6 +34,8 @@ public static class MauiProgram
 							var clientSize = g.ActualClientSize;
 							if (clientSize.Height != window.Bounds.Height || clientSize.Width != window.Bounds.Width)
 							{ // save size
+								Preferences.Default.Set("Height", window.Bounds.Height);
+								Preferences.Default.Set("Width", window.Bounds.Width);
 							}
 						})
 						.OnWindowCreated(window => {
